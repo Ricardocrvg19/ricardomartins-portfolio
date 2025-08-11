@@ -1,0 +1,569 @@
+/* Reseta o CSS padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis de cores para temas */
+:root {
+    --bg-image: url('./assets/bg-dark.jpg');
+    --bg-color: #333;
+    --text-color: #e0e0e0;
+    --icon-color: #040405; 
+}
+
+/* Estilo do tema claro */
+body.light-mode {
+    --bg-image: url('./assets/new-light-bg.jpg');
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --icon-color: #555;
+
+    button.toggle-description-btn, footer {
+        color: #040405;
+        font-weight: bolder;
+    }
+}
+
+/* Estilo do corpo da página */
+body {
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-around;
+    margin: 30px;
+    align-items: center;
+}
+
+header img {
+    height: 30px;
+    border-bottom: 1px solid black;
+}
+
+header button {
+    padding: 10px;
+    border: none;
+    
+
+        background-color: aliceblue;
+    border-radius: 60px;
+    cursor: pointer;
+}
+
+header button i {
+    font-size: 50px;
+    
+}
+
+header ul {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    list-style-type: none;
+    text-transform: uppercase;
+}
+
+header ul a {
+    text-decoration: none;
+    color: #fff;
+    background: #031468;
+    border: none;
+    border-top-right-radius: 15px;
+    padding: 12px;
+}
+
+header ul a:hover {
+    opacity: .6;
+}
+
+/* Estilo da seção principal (home) */
+.first-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 15px; 
+    margin: 140px 200px;
+}
+
+.first-aside h1 {
+    font-size: xx-large;
+}
+
+.first-aside div {
+    display: flex;
+    gap: 22px;
+}
+
+.first-aside .github-icon,
+.first-aside .linkedin-icon {
+    color: #fff;
+    font-size: 3.5em;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.first-aside .github-icon:hover,
+.first-aside .linkedin-icon:hover {
+    transform: scale(1.1);
+    color: aqua;
+    cursor: pointer;
+}
+
+.first-aside #links-contatos {
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #fff;
+    background: #031468;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    text-transform: uppercase;
+    transition: padding 0.2s, opacity 0.2s;
+}
+
+.first-aside #links-contatos:hover {
+    padding: 18px;
+    opacity: .6;
+}
+
+/* Estilo da seção de tecnologias */
+.tech-stack {
+    padding: 50px;
+    border-radius: 10px;
+    margin: 80px;
+    text-align: center;
+}
+
+.tech-stack h2 {
+    font-size: 2.5em;
+}
+
+.scrolling-container {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.scrolling-icons {
+    display: inline-flex;
+    background-color: rgba(4, 4, 5, 0.09);
+    border: 5px dashed #031468;
+    padding: 10px;
+    gap: 300px;
+    animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.tech-icon {
+    font-size: 4.5em;
+}
+
+/* Estilo da seção de projetos (desktop) */
+main#projetos {
+    display: flex;
+    flex-direction: column; 
+    margin: 90px 50px;
+}
+
+main#projetos h2 {
+    font-size: 2.5em; 
+    text-align: center; 
+}
+
+.project-cards-desktop {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container, .card-container3 {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(3, 20, 104, 0.1); 
+    border-radius: 20px; 
+    padding: 10px;
+    align-items: center;
+    margin: 30px 30px;
+    opacity: 0;
+    transform: translateX(-500px);
+    transition: opacity 1s ease-out, transform 2.5s ease-out;
+}
+
+.card-container2 {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: rgba(3, 20, 104, 0.1); 
+    border-radius: 20px; 
+    padding: 10px;
+    align-items: center;
+    margin: 30px 30px;
+    opacity: 0;
+    transform: translateX(500px);
+    transition: opacity 1s ease-out, transform 2.5s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card-container img, .card-container2 img, .card-container3 img {
+    max-width: 390px;
+}
+
+.container-left, .container-right {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.container-left {
+    align-items: center;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #fff;
+    background: #031468;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin-right: 30px;
+    transition: padding 0.2s, opacity 0.2s;
+}
+
+.project-links a:hover {
+    padding: 17px;
+    opacity: .6;
+}
+
+/* Esconde o carrossel de projetos por padrão */
+.mobile-carousel {
+    display: none;
+}
+
+/* Estilo da seção "Sobre Mim" */
+#sobre {
+    display: flex;
+    flex-direction: column; 
+    margin: 90px 50px;
+    padding: 20px;
+
+    h3{
+        text-align: justify;
+        line-height: 1;
+    }
+}
+
+.about-card {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(3, 20, 104, 0.1); 
+    border-radius: 20px; 
+    padding: 10px;
+    align-items: center;
+    margin: 30px 30px;
+}
+
+#sobre .container-rigth-1section {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+    margin-left: 200px;
+    text-align: center;
+}
+
+#sobre .container-left-1section img {
+    max-width: 200px;
+    border-radius: 20px;
+    margin-left: 130px;
+}
+
+#sobre a {
+    text-decoration: none;
+    color: #fff;
+    background: #031468;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin-right: 40px;
+    transition: padding 0.2s, opacity 0.2s;
+}
+
+#sobre a:hover {
+    padding: 17px;
+    opacity: .6;
+}
+
+/* Estilo para as seções de Formação, Experiências, etc. */
+section:not(#projetos, #sobre, #contatos) {
+    display: flex;
+    flex-direction: column;
+    margin: 90px 50px;
+    padding: 20px;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+    background-color: rgba(3, 20, 104, 0.1);
+    border-radius: 20px;
+    padding: 10px;
+    align-items: center;
+    margin: 30px 30px;
+}
+
+.descricao-experiencia {
+    background-color: rgba(103, 103, 126, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.descricao-experiencia.visivel {
+    max-height: 500px;
+}
+
+.toggle-description-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #fff;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-description-btn.rotacionar i {
+    transform: rotate(180deg);
+}
+
+/* Estilo da seção de contatos */
+section#contatos {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 30px;
+    background-color: rgba(3, 20, 104, 0.1);
+    border-radius: 20px;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+section#contatos .github-icon,
+section#contatos .linkedin-icon {
+    color: #fff;
+    font-size: 2.5em;
+    transition: transform 0.2s, color 0.2s, font-size 0.2s;
+    margin-right: 18px;
+}
+
+section#contatos .github-icon:hover,
+section#contatos .linkedin-icon:hover {
+    transform: scale(1.1);
+    color: aqua;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#links-contatos1 {
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #fff;
+    background: #031468;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    text-transform: lowercase;
+    transition: padding 0.2s, opacity 0.2s;
+}
+
+#links-contatos1:hover {
+    padding: 25px;
+    opacity: .7;
+}
+
+footer {
+    text-align: center;
+    background-color: rgba(3, 20, 104, 0.1);
+    font-size: 22px;
+    color: #fff;
+    padding: 12px;
+    margin-top: auto;
+}
+
+/* -- MEDIA QUERIES PARA MOBILE -- */
+@media (max-width: 768px) {
+    /* Ajustes gerais de layout para telas pequenas */
+    header {
+        flex-direction: column;
+        margin: 0;
+
+        img{
+           display: none;
+        }
+       
+    }
+
+    header ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%; 
+    }
+
+    header ul li {
+        width: 100%; 
+        padding: 15px; 
+    }
+
+    header ul li a {
+        display: block; 
+        text-align: center;
+    }
+
+
+    .first-aside {
+        margin: 50px 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tech-stack,
+    main,
+    #sobre,
+    section:not(#projetos),
+    section#contatos {
+        margin: 20px 10px;
+        padding: 10px;
+    }
+
+    /* Esconde os cartões de projeto de desktop e mostra o carrossel */
+    .project-cards-desktop {
+        display: none;
+    }
+
+    .mobile-carousel {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        margin: 20px auto;
+        max-width: 100%;
+        background-color: rgba(3, 20, 104, 0.1);
+        border-radius: 20px;
+    }
+
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .project-card {
+        flex-shrink: 0;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .project-card .card-container,
+    .project-card .card-container2,
+    .project-card .card-container3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        opacity: 1;
+        transform: none;
+        background: none;
+    }
+    
+    .project-card .container-left,
+    .project-card .container-right {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .project-card img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 30px;
+        max-width: 100%;
+        height: auto;
+        margin-top: 30px;
+        width: 400px;
+        border-radius: 20px;
+    }
+
+    .project-card h3, .project-card p {
+        text-align: center;
+    }
+
+    .nav-btn {
+        display: block;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        z-index: 10;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+    }
+
+    #prev-btn { left: 10px; }
+    #next-btn { right: 10px; }
+
+    #sobre .about-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sobre .container-left-1section img {
+        margin: 0;
+        padding: 30px;
+    }
+
+    #sobre .container-rigth-1section {
+        margin: 0;
+    }
+}
