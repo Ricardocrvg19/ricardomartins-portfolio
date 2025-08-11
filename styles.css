@@ -263,7 +263,7 @@ main#projetos h2 {
     opacity: .6;
 }
 
-/* Esconde o carrossel de projetos por padrão */
+/* Esconde o carrossel de projetos  */
 .mobile-carousel {
     display: none;
 }
@@ -430,7 +430,7 @@ footer {
 
 /* -- MEDIA QUERIES PARA MOBILE -- */
 @media (max-width: 768px) {
-    /* Ajustes gerais de layout para telas pequenas */
+    
     header {
         flex-direction: column;
         margin: 0;
